@@ -1,5 +1,8 @@
 <h1>
   <div *ngFor='let t of title'>
-    <div>{{t.name}} | {{t.phone}} | {{t.email}}</div>
+    <md-input-container>
+      <input mdInput [(ngModel)]="t.name">
+    </md-input-container> 
+    <button (click)="saveData(t)" >SAVE</button>
   </div>
 </h1>

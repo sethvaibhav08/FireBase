@@ -16,6 +16,9 @@ export class AppComponent implements OnInit {
   ngOnInit(){
       this.getAllUsers();
   }
+  public saveData(user:any) {
+      this.userService.save(user);
+  }
 
   private getAllUsers(){
     this.userService.getUsers()

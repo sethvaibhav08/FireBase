@@ -2,7 +2,6 @@ import { Injectable } from "@angular/core";
 import { Http, Response } from "@angular/http";
 import { Observable } from "rxjs/Observable";
 import { AngularFireDatabase } from 'angularfire2/database';
-import 'rxjs/add/operator/map';
 @Injectable()
 export class UsersService {
     
@@ -13,5 +12,11 @@ export class UsersService {
             orderByChild: 'name'
         }
         });
+    }
+
+    public save(user:any){
+        this._db.database
+        .ref('/users/'+user.$key)
+        .update({name: user.name});
     }
 }
