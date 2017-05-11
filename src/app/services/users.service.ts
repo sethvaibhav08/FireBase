@@ -14,6 +14,11 @@ export class UsersService {
         });
     }
 
+    public add(name:String){
+        var newPostKey = this._db.database.ref('/users/').push().key;
+        this._db.database.ref('/users/'+newPostKey).set({name: name})
+    }
+
     public save(user:any){
         this._db.database
         .ref('/users/'+user.$key)

@@ -20,6 +20,10 @@ export class AppComponent implements OnInit {
       this.userService.save(user);
   }
 
+  public addData(name:String){
+    this.userService.add(name);
+  }
+
   private getAllUsers(){
     this.userService.getUsers()
     .subscribe(

@@ -30,7 +30,7 @@ export const firebaseConfig = {
     HttpModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
-    MaterialModule,
+    MaterialModule.forRoot(),
     BrowserAnimationsModule
   ],
   providers: [UsersService],

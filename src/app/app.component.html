@@ -1,8 +1,20 @@
 <h1>
-  <div *ngFor='let t of title'>
+  <md-card >
+    <md-list>
+      <md-list-item *ngFor='let t of title'>
     <md-input-container>
       <input mdInput [(ngModel)]="t.name">
     </md-input-container> 
-    <button (click)="saveData(t)" >SAVE</button>
-  </div>
+    <button md-raised-button (click)="saveData(t)" >SAVE</button>
+      </md-list-item>
+    </md-list>
+  </md-card>
+  <md-card>
+    <form name="f1">
+      <md-input-container>
+      <input name="newNameInputField" mdInput placeholder="Name" [(ngModel)]="newName">
+    </md-input-container> 
+    <button md-raised-button (click)="addData(newName)">Add</button>
+    </form>
+  </md-card>
 </h1>
