@@ -14,12 +14,12 @@ import { UsersService } from "app/services/users.service";
 import { AuthService } from "app/services/auth.service";
 
 export const firebaseConfig = {
-    apiKey: "AIzaSyCKsP_44DZectG-bcSJU9443zLZQMDl5TU",
-    authDomain: "angularapp-1176.firebaseapp.com",
-    databaseURL: "https://angularapp-1176.firebaseio.com",
-    projectId: "angularapp-1176",
-    storageBucket: "angularapp-1176.appspot.com",
-    messagingSenderId: "452870737241"
+    apiKey: "AIzaSyCJx7rvrkYitHD838_0-DtKoxin30_H2q4",
+    authDomain: "coloringlife-fc2a8.firebaseapp.com",
+    databaseURL: "https://coloringlife-fc2a8.firebaseio.com",
+    projectId: "coloringlife-fc2a8",
+    storageBucket: "coloringlife-fc2a8.appspot.com",
+    messagingSenderId: "1016268436646"
 };
 
 @NgModule({
