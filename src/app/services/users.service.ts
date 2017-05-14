@@ -8,8 +8,8 @@ export class UsersService {
     private dbUser:string;
     constructor(private _http:Http, private _db:AngularFireDatabase){}
     
-    public setUser(uid:String){
-        this.dbUser = "/"+uid+"/users/";
+    public setUser(uid:string){
+        this.dbUser = "/users/";
     }
     
     public  getUsers() : Observable<any>{
@@ -22,7 +22,7 @@ export class UsersService {
 
     public add(name:String){
         var newPostKey = this._db.database.ref(this.dbUser).push().key;
-        this._db.database.ref(this.dbUser+newPostKey).set({name: name})
+        this._db.database.ref(this.dbUser+newPostKey).set({name: name});
     }
 
     public save(user:any){
