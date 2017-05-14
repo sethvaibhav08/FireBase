@@ -9,7 +9,7 @@ export class UsersService {
     constructor(private _http:Http, private _db:AngularFireDatabase){}
     
     public setUser(uid:string){
-        this.dbUser = "/users/";
+        this.dbUser = "/users/"+uid+"/";
     }
     
     public  getUsers() : Observable<any>{
