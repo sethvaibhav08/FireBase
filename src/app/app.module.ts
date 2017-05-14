@@ -6,10 +6,12 @@ import {MaterialModule} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import { AngularFireModule } from 'angularfire2';
-import { AngularFireDatabaseModule} from 'angularfire2/database'
+import { AngularFireDatabaseModule} from 'angularfire2/database';
+import { AngularFireAuthModule} from 'angularfire2/auth'
 
 import { AppComponent } from './app.component';
 import { UsersService } from "app/services/users.service";
+import { AuthService } from "app/services/auth.service";
 
 export const firebaseConfig = {
     apiKey: "AIzaSyCKsP_44DZectG-bcSJU9443zLZQMDl5TU",
@@ -31,9 +33,10 @@ export const firebaseConfig = {
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
     MaterialModule.forRoot(),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AngularFireAuthModule
   ],
-  providers: [UsersService],
+  providers: [UsersService,AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
