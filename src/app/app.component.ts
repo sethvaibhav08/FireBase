@@ -9,6 +9,7 @@ import { AuthService } from "app/services/auth.service";
 })
 export class AppComponent implements OnInit {
   private users;
+  private loggedInUserData:any;
   public title:Array<any> = ["loading..."];
 
   constructor(private userService:UsersService,
@@ -16,11 +17,20 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(){
-      this.getAllUsers();
+      this.af.getAuthState().subscribe(
+          authResp => this.handleAuth(authResp),
+          err => console.log("Auth Error: "+err)
+      );     
   }
 
   public login(){
       this.af.loginViaGoogle();
+  }
+
+  private handleAuth(authResp:any){
+    this.loggedInUserData = authResp.providerData[0];
+    this.userService.setUser(this.loggedInUserData.uid);
+     this.getAllUsers();
   }
 
   public saveData(user:any) {

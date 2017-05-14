@@ -6,14 +6,15 @@ import * as firebase from 'firebase/app';
 export class AuthService {
 
   constructor(private af:AngularFireAuth) { 
-    this.af.authState.subscribe(
-      resp => console.log(resp),
-      err => console.log(err)
-      );
+  }
+
+  public getAuthState(){
+    return this.af.authState;
   }
 
   public loginViaGoogle(){
-    this.af.auth.signInWithRedirect(new firebase.auth.GoogleAuthProvider());
+    this.af.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
   }
+
   
 }
